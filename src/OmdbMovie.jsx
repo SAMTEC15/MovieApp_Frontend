@@ -15,7 +15,7 @@ const OmdbMovie = () => {
   const searchMovies = async () => {
     try {
       const response = await axios.get(
-        `https://omdbmovie-backend.onrender.com/api/Movie/search?title=${searchTerm}`
+        `https://movieapplication-backend-y32t.onrender.com/api/Movie/search?title=${searchTerm}`
       );
       setSearchResults(response.data.search);
       setMovies(response.data.search);
@@ -78,7 +78,7 @@ const OmdbMovie = () => {
                   <div className="container">
                     {movies &&
                       movies.map((movie) => (
-                        <Link key={movie.imdbID} to={`https://omdbmovie-backend.onrender.com/api/Movie/${movie.imdbID}`}>
+                        <Link key={movie.imdbID} to={`https://movieapplication-backend-y32t.onrender.com/api/Movie/${movie.imdbID}`}>
                           <MovieCard movie={movie} />
                         </Link>
                       ))}
@@ -104,7 +104,7 @@ const OmdbMovie = () => {
               </div>
             }
           />
-          <Route path="https://omdbmovie-backend.onrender.com/api/Movie/:id" element={<MovieDetails />} />
+          <Route path="https://movieapplication-backend-y32t.onrender.com/api/Movie/:id" element={<MovieDetails />} />
         </Routes>
       </div>
     </Router>
